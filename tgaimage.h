@@ -34,7 +34,7 @@ struct TGAColor {
 	int byte_per_pixel;
 
 	TGAColor() : val(0), byte_per_pixel(1) {}
-	TGAColor(uchar R, uchar G, uchar B, uchar A) : red(R), green(G), blue(B), alpha(A), byte_per_pixel(4) {}
+	TGAColor(uchar R, uchar G, uchar B, uchar A=255) : red(R), green(G), blue(B), alpha(A), byte_per_pixel(4) {}
 	TGAColor(int v, int bpp) : val(v), byte_per_pixel(bpp) {}
 	TGAColor(const TGAColor &c) : val(c.val), byte_per_pixel(c.byte_per_pixel) {}
 	TGAColor(const uchar *p, int bpp) : val(0), byte_per_pixel(bpp) {
@@ -53,8 +53,6 @@ struct TGAColor {
 		return *this;
 	}
 };
-
-
 
 class TGAImage
 {
